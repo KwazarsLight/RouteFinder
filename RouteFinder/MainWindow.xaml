@@ -1,0 +1,48 @@
+﻿<Window x:Class="RouteFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RouteFinder"
+        mc:Ignorable="d"
+        Title="КП Харкiвводоканал" Width="673.5" Height="650">
+    <Window.Background>
+        <ImageBrush ImageSource="LogoResources/logo2.jpg" Stretch="UniformToFill">
+            <ImageBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ImageBrush.RelativeTransform>
+        </ImageBrush>
+    </Window.Background>
+
+    <Grid>
+        <ListView x:Name="RoutelistView" HorizontalAlignment="Left" Height="589" Margin="0,20,0,0" VerticalAlignment="Top" Width="666" MouseDoubleClick="RoutelistView_MouseDoubleClick" Visibility="Visible" BorderBrush="{x:Null}" Foreground="Black" OpacityMask="#FFFF0202">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Маршруты" Width="330" DisplayMemberBinding="{Binding routeName}"></GridViewColumn>
+                    <GridViewColumn Header="Время выполнения " Width="330" DisplayMemberBinding="{Binding time}"> </GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+            </ListView.Resources>
+            <ListView.Background>
+                <SolidColorBrush Color="#FF289DE0" Opacity="0.25"/>
+            </ListView.Background>
+        </ListView>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="51" Background="{x:Null}">
+            <MenuItem Header="Меню" Foreground="Black" BorderBrush="{x:Null}" Background="{x:Null}" Height="20" Width="51">
+                <MenuItem Header="Добавить заявку" Click="AddRequestButton_Click"/>
+                <MenuItem Header="Задать количество доступных машин" Click="SetCarsCount_Click"/>
+                <MenuItem Header="Выбрать файл" Click="ChooseFileButton_Click"/>
+                <MenuItem Header="Построить маршрут" Click="SetRouteButton_Click"/>
+                <Separator/>
+                <MenuItem x:Name="CallInfoButton" Header="Информация о программе" Click="CallInfoButton_Click"/>
+                <MenuItem Header="Exit" Click="MenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

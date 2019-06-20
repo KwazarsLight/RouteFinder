@@ -1,0 +1,26 @@
+﻿<Window x:Class="RouteFinder.AppInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RouteFinder"
+        mc:Ignorable="d"
+        Title="Информация о приложении" Height="400" Width="400">
+    <Window.Background>
+        <ImageBrush ImageSource="LogoResources\logo2.jpg" Stretch="UniformToFill">
+            <ImageBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ImageBrush.RelativeTransform>
+        </ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Label x:Name="InfoLabel" Content="Ради написания этой  программы костьми полягло больше &#xD;&#xA;людей, чем при строительстве Санкт-Петербурга, так её  можно &#xD;&#xA;смело величать &quot;ПО на костях&quot;!" HorizontalAlignment="Left" VerticalAlignment="Top" Height="369" Width="392" TextOptions.TextHintingMode="Fixed" Background="#BF009DDD"/>
+        <Label x:Name="CopuRightLable" Content="All rights reserved by Butov Serhei" HorizontalAlignment="Left" Margin="238,335,0,0" VerticalAlignment="Top" Height="24" Width="144" FontFamily="Times New Roman" FontSize="9"/>
+
+    </Grid>
+</Window>
